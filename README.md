@@ -10,6 +10,8 @@ DCGAN is an extension to the GAN architecture with the use of convolutional neur
 
 Generating new brain images can be seen as a random variable generation problem, a probabilistic experiment. The sample image from the input OASIS brain dataset is shown below. Its 256 X 256 size with 1 grey-scale channel. Each image is a vector of 65,536-dimensions. We build a space with 65,536 axes, where each image will be a point in this space. Having a probability distribution function, maps the each input brain images to the non-negative real number and sums to 1. GAN generates the new brain image by generating the new vector following this probability distribution over the 65,536-dimensional vector space, which is very complex one and we dont know how to generate this complex random variables. The idea here is an transform method, generating 65,536 uniform random variables(as a noise vector) and apply the complex function to this variable, where this complex functions are approximated by the CNN in the generator part and produce the 65,536-dimensional random variable that follow the input brain images probability distribution.
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 ## Training
 
 Training the Generative adversaial network involves by training the generator part to maximize the final binary classification error ( between real or fake image), while discriminator is trained to minimize it. Reaches equilibrium when discriminator classify with equal probability and generator produces images that follows the input brain images probability distribution.
