@@ -14,7 +14,7 @@ Generating new brain images can be seen as a random variable generation problem,
 
 ## Modeling
 
-GanModel.py module has both the generator and discrimininator network. Generator Networks takes Input as a noise vector of shape (100,), generated from the standard normal distribution and in the early layer of network its reshaped to the 65536. Remaining 5 layers consists of convolutional-2DTranspose layer for upsampling the image to size (256,256) with stridded convolutions, Batch normalisation and Relu activation functions. Output Layer consists of elu activation and produce the fake image of size (256,256,1).
+GanModel.py module has both the generator and discrimininator network. Generator Networks takes Input as a noise vector of shape (100,), generated from the standard normal distribution and in the early layer of network its reshaped to the 65536. Remaining 5 layers consists of [convolutional-2DTranspose](https://naokishibuya.medium.com/up-sampling-with-transposed-convolution-9ae4f2df52d0) layer for upsampling the image to size (256,256) with stridded convolutions, Batch normalisation and Relu activation functions. Output Layer consists of tanh activation and produce the fake image of size (256,256,1). Using LeakyRelu and elu activation instead of Relu and tanh activation in generator network also produces better results.
 
 Discriminator takes input image( either real or fake) of size (256,256,1). It inculdes 6 convolution-2D layer with convolution strides for downsampling with LeakyRelu activation and used droplayer with 0.3 for regularisation. Output layer uses sigmoid activation for classifying real(1) or fake(0) images.
 
