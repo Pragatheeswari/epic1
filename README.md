@@ -35,6 +35,6 @@ Combined model is built by adding discriminator on top of generator. Compile the
 
 Training takes 20-25 minutes for 15000 Epochs to complete. Below represents the generated fake images, which is printed for every 1000 epochs.
 
-![](https://github.com/Pragatheeswari/epic1/blob/master/Training_loss_plot.jpeg)
+![](https://github.com/Pragatheeswari/epic1/blob/master/Training_loss_plot.jpg)
 
-![](https://github.com/Pragatheeswari/epic1/blob/master/DCGAN_generator_images.jpeg)
+![](https://github.com/Pragatheeswari/epic1/blob/master/DCGAN_generator_images.jpg)
