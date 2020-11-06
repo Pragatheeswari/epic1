@@ -18,7 +18,7 @@ GanModel.py module has both the generator and discrimininator network. Generator
 
 Discriminator takes input image( either real or fake) of size (256,256,1). It inculdes 6 convolution-2D layer with convolution strides for downsampling with LeakyRelu activation and used droplayer with 0.3 for regularisation. Output layer uses sigmoid activation for classifying real(1) or fake(0) images.
 
-Task-6 is the main file, it consists of function to load the images(data_gen), function to display the images produced by the generator network( display_images), other model parameters, building the models(generator, discriminator and combined networks), and finally training process for the nubmer of epoches.
+Task-6 is the main file, it consists of function to load the images(data_gen), function to display the images produced by the generator network( display_images), other model parameters, building the models(generator, discriminator and combined networks), finally training process for the nubmer of epoches and ploting the training loss.
 
 ## Training
 
@@ -30,3 +30,7 @@ Combined model is built by adding discriminator on top of generator. Compile the
 1. Using generator to generate fake images by giving input as a random noise vectors for a Batch-size(16).
 1. Train the discriminator with both real(1) and fake(0) images to classify. This will allow the discriminator's weights to be updated.
 1. Train the combined model only using the fake images.Note when combined model is trained only generator's model parameter is updated.
+
+## Results
+
+Training takes 20-25 minutes for 15000 Epochs to complete. Below represents the generated fake images, which is printed for every 1000 epochs.
